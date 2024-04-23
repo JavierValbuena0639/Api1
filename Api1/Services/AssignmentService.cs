@@ -30,7 +30,7 @@ namespace Api1.Services
             return await _assignmentRepository.CreateAssignment(employeeID, projectID, startDate, assignmentDate, assignmentHours);
         }
 
-        public async Task<Assignments> UpdateAssignment(int assignmentId, int employeeID, int projectID, DateTime startDate, DateTime assignmentDate, string assignmentHours)
+        public async Task<Assignments?> UpdateAssignment(int assignmentId, int employeeID, int projectID, DateTime startDate, DateTime assignmentDate, string assignmentHours)
         {
             var existingAssignment = await _assignmentRepository.GetAssignment(assignmentId);
             if (existingAssignment == null)
