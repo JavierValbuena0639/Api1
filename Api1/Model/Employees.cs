@@ -8,7 +8,7 @@ namespace Api1.Model
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int IDEmployee { get; set; }
+        public int? IDEmployee { get; set; }
         public required string Name { get; set; }
         public required string Lastname { get; set; }
         public required string Charge { get; set; }
