@@ -26,9 +26,9 @@ namespace Api1.Services
             return await _timeDedicatedRepository.GetTimeDedicated(timeDedicatedId);
         }
 
-        public async Task<TimeDedicated> CreateTimeDedicated(int timeDedicatedId, int employeeId, DateTime date, int projectId, int workedHours)
+        public async Task<TimeDedicated> CreateTimeDedicated(int employeeId, DateTime date, int projectId, int workedHours)
         {
-            return await _timeDedicatedRepository.CreateTimeDedicated(timeDedicatedId, employeeId, date, projectId, workedHours);
+            return await _timeDedicatedRepository.CreateTimeDedicated(employeeId, date, projectId, workedHours);
         }
 
         public async Task<TimeDedicated> UpdateTimeDedicated(TimeDedicated timeDedicated)

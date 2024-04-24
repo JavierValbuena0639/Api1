@@ -8,10 +8,10 @@ namespace api1st.Repositories
     {
         Task<List<TimeDedicated>> GetAll();
         Task<TimeDedicated> GetTimeDedicated(int TimeDedicatedId);
-        Task<TimeDedicated> CreateTimeDedicated(int timeDedicatedId, int employeeId, DateTime date, int iDProyect, int workedHours);
+        Task<TimeDedicated> CreateTimeDedicated(int timeDedicatedId, int employeeId, int iDProyect, DateTime date,  int workedHours);
         Task<TimeDedicated> UpdateTimeDedicated(TimeDedicated timeDedicated);
         Task<TimeDedicated> DeleteTimeDedicated(int TimeDedicatedId);
-
+        Task<TimeDedicated> CreateTimeDedicated(int employeeId, DateTime date, int projectId, int workedHours);
     }
     public class TimeDedicateRepository : UITimeDedicated
     {
@@ -30,7 +30,7 @@ namespace api1st.Repositories
         {
             return await _db.TimeDedicated.FirstOrDefaultAsync(t => t.TimeDedicatedId == timeDedicatedId);
         }
-        public async Task<TimeDedicated> CreateTimeDedicated(int timeDedicatedId, int employeeId, DateTime date, int iDProyect, int workedHours)
+        public async Task<TimeDedicated> CreateTimeDedicated(int timeDedicatedId, int employeeId, int iDProyect, DateTime date,  int workedHours)
         {
             TimeDedicated timeDedicated = new TimeDedicated
             {
@@ -62,5 +62,9 @@ namespace api1st.Repositories
             return timeDedicated;
         }
 
+        public Task<TimeDedicated> CreateTimeDedicated(int employeeId, DateTime date, int projectId, int workedHours)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

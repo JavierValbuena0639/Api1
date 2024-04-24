@@ -9,12 +9,14 @@ namespace Api1.Model
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int AssignmentId { get; set; }
+        public int EmployeeID { get; set; }
+        public int IDProject { get; set; }
 
         [ForeignKey("EmployeeID")]
-        public int EmployeeID { get; set; }
+        public virtual Employees IDEmployee { get; set; }
 
         [ForeignKey("IDProject")]
-        public int IDProject { get; set; }
+        public virtual Projects ProjectId { get; set; }
 
         [Required]
         public DateTime StartDate { get; set; }

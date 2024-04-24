@@ -10,10 +10,11 @@ namespace Api1.Model
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int? IDEmployee { get; set; }
         public required string Name { get; set; }
+        public required int IDDepartament { get; set; }
         public required string Lastname { get; set; }
         public required string Charge { get; set; }
         [ForeignKey("IDDepartament")]
-        public int IDDepartament { get; set; }
+        public virtual Departaments DepartamentID { get; set; }
 
 
     
