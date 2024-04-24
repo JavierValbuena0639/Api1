@@ -13,7 +13,7 @@ namespace Api1.Model
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ProjectId { get; set; }
-        public required string NameProject { get; set; }
+        public required string? NameProject { get; set; }
         public required string Description { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
